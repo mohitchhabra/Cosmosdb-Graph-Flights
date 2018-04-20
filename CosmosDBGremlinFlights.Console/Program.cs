@@ -46,12 +46,12 @@ namespace CosmosDBGremlinFlights.Console
             var routes = new HashSet<Tuple<string, string>>();
             using (var httpClient = new HttpClient())
             {
-                var airportsCsvStream = await httpClient.GetStreamAsync("https://raw.githubusercontent.com/jpatokal/openflights/master/data/airports.dat");
-                using (var fileStream = new FileStream("airports.dat", FileMode.Create, FileAccess.Write))
-                {
-                    await airportsCsvStream.CopyToAsync(fileStream);
-                    airportsCsvStream.Close();
-                }
+                //var airportsCsvStream = await httpClient.GetStreamAsync("https://raw.githubusercontent.com/jpatokal/openflights/master/data/airports.dat");
+                //using (var fileStream = new FileStream("airports.dat", FileMode.Create, FileAccess.Write))
+                //{
+                //    await airportsCsvStream.CopyToAsync(fileStream);
+                //    airportsCsvStream.Close();
+                //}
 
                 using (var fileStream = new FileStream("airports.dat", FileMode.Open))
                 using (var reader = new CsvReader(new StreamReader(fileStream)))
@@ -88,12 +88,12 @@ namespace CosmosDBGremlinFlights.Console
                     }
                 }
 
-                var routesCsvStream = await httpClient.GetStreamAsync("https://raw.githubusercontent.com/jpatokal/openflights/master/data/routes.dat");
-                using (var fileStream = new FileStream("routes.dat", FileMode.Create, FileAccess.Write))
-                {
-                    await routesCsvStream.CopyToAsync(fileStream);
-                    routesCsvStream.Close();
-                }
+                //var routesCsvStream = await httpClient.GetStreamAsync("https://raw.githubusercontent.com/jpatokal/openflights/master/data/routes.dat");
+                //using (var fileStream = new FileStream("routes.dat", FileMode.Create, FileAccess.Write))
+                //{
+                //    await routesCsvStream.CopyToAsync(fileStream);
+                //    routesCsvStream.Close();
+                //}
 
                 using (var fileStream = new FileStream("routes.dat", FileMode.Open))
                 using (var reader = new CsvReader(new StreamReader(fileStream)))
